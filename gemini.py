@@ -8,7 +8,7 @@ load_dotenv()
 st.set_page_config(page_title="CineBot 🎬", layout="wide")
 st.title("🎬 CineBot: Recomendador + Chat Cinéfilo")
 
-# --- Variables Globales ---
+# --- Variables Globales app---
 GENEROS = [
     "Acción", "Comedia", "Drama", "Sci-Fi", "Fantasía",
     "Terror", "Romance", "Animación", "Documental", "Thriller"
