@@ -1,0 +1,15 @@
+# Ignorar archivos de entorno
+.env
+
+# Ignorar carpetas y archivos comunes de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignorar entorno virtual (si está dentro del proyecto)
+venv/
+env/
+
+# Ignorar archivos de sistema
+.DS_Store
