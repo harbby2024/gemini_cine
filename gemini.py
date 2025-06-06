@@ -1,5 +1,4 @@
 import streamlit as st
-from google import genai
 from dotenv import load_dotenv
 import os
 
@@ -62,6 +61,10 @@ with st.sidebar:
         "Rango de años:", 
         1970, 2025, (1990, 2020)
     )
+    
+    # --- Botón para mostrar código fuente ---
+    if st.button("📄 Ver código fuente"):
+        st.session_state.mostrar_codigo = not st.session_state.get("mostrar_codigo", False)
 
 # --- Pestañas Principales ---
 tab1, tab2 = st.tabs(["🎥 Recomendador", "💬 Chat Cinéfilo"])
@@ -105,3 +108,13 @@ with tab2:
             )
             st.markdown("**Respuesta:**")
             st.markdown(respuesta)
+
+# --- Mostrar el código fuente si está activado ---
+if st.session_state.get("mostrar_codigo", False):
+    with st.expander("📜 Código Fuente Completo", expanded=True):
+        try:
+            with open(__file__, "r", encoding="utf-8") as f:
+                codigo = f.read()
+            st.code(codigo, language="python")
+        except:
+            st.error("No se pudo cargar el código fuente.")
